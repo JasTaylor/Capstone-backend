@@ -51,10 +51,10 @@ router.delete('/places/:id', requireToken, (req, res, next) => {
 })
 
 router.patch('/places/:id', requireToken, multerUpload.single('file'), (req, res, next) => {
-  req.body.place.owner = req.user.id
-  for (const key in req.body.place) {
-    if (req.body.place[key] === '') {
-      delete req.body.place[key]
+  req.body.owner = req.user.id
+  for (const key in req.body) {
+    if (req.body[key] === '') {
+      delete req.body[key]
     }
   }
   if (req.file) {
@@ -71,7 +71,7 @@ router.patch('/places/:id', requireToken, multerUpload.single('file'), (req, res
               })
             }
             return place.update({
-              ...req.body.place,
+              ...req.body,
               url: s3Response.Location
             })
           })
@@ -83,7 +83,7 @@ router.patch('/places/:id', requireToken, multerUpload.single('file'), (req, res
       .then(handle404)
       .then(place => {
         requireOwnership(req, place)
-        return place.update(req.body.place)
+        return place.update(req.body)
       })
       .then(() => res.sendStatus(204))
       .catch(next)
