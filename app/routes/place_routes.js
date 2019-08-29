@@ -91,9 +91,8 @@ router.patch('/places/:id', requireToken, multerUpload.single('file'), (req, res
 })
 
 router.post('/places', requireToken, multerUpload.single('file'), (req, res, next) => {
-  const place = req.body.place
+  const place = req.body
   place.owner = req.user.id
-  console.log(place)
   if (req.file) {
     s3Upload(req.file)
       .then(s3Response => Place.create({
