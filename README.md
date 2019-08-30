@@ -6,17 +6,17 @@
 
 ## Set Up Steps
 
-1. Download the express-api-template
-2. Move the .zip file to your wdi/projects/ directory and Unzip it (creating a folder)
-3. Rename the directory from express-api-template -> your-app-name.
-4. Empty README.md and fill with your own content.
-5. Move into the new project and git init.
-6. Replace all instances of 'express-api-template' with your app name.
-7. Install dependencies with npm install.
-8. Ensure that you have nodemon installed by running npm install -g nodemon.
-9. Ensure the API is functioning properly by running npm run server.
-10. Once everything is working, make an initial commit.
-11. Follow the steps in express-api-deployment-guide
+1.  [Download](https://git.generalassemb.ly/ga-wdi-boston/express-api-template) this template.
+2.  Move the .zip file to your `wdi/projects/` directory and Unzip it (creating a folder) -- **NOTE:** if the folder was already unzipped, use the `mv` command line to move it to the `wdi/projects/` directory.
+3.  Rename the directory from express-api-template -> your-app-name.
+4.  Empty [`README.md`](README.md) and fill with your own content.
+5.  Move into the new project and `git init`.
+6.  Replace all instances of `'express-api-template'` with your app name.
+7.  Install dependencies with `npm install`.
+8.  Ensure that you have `nodemon` installed by running `npm install -g nodemon`.
+9.  Ensure the API is functioning properly by running `npm run server`.
+10.  Once everything is working, make an initial commit.
+11.  Follow the steps in [express-api-deployment-guide](https://git.generalassemb.ly/ga-wdi-boston/express-api-deployment-guide)
 
 ## Important Links
 - [Front-End Repo](https://github.com/JasTaylor/BonVoyage)
