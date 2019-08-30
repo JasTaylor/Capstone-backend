@@ -108,7 +108,6 @@ router.post('/places', requireToken, multerUpload.single('file'), (req, res, nex
       })
       .catch(next)
   } else {
-    console.log(place)
     Place.create({
       title: place.title,
       text: place.text,
