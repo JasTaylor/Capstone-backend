@@ -30,11 +30,10 @@ router.get('/places/:id', (req, res, next) => {
     .then(place => res.status(200).json({ place: place.toObject() }))
 })
 
-router.delete('/places/:id', requireToken, (req, res, next) => {
+router.delete('/places/:id', (req, res, next) => {
   Place.findById(req.params.id)
     .then(handle404)
     .then(place => {
-      requireOwnership(req, place)
       place.remove()
       return place
     })
